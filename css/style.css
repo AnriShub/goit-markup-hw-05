@@ -249,6 +249,9 @@ padding-top: 0;
 }
 
 .over-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 370px;
     height: 70px;
@@ -257,19 +260,19 @@ padding-top: 0;
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
-    text-align: center;
+    /* text-align: center; */
     letter-spacing: 0.03em;
     text-transform: uppercase;
     background-color:rgba(47, 48, 58, 0.8);
 
-    color: #FFFFFF;
-    padding-top: 27px;
+    /* /* color: #FFFFFF; */
+    /* padding-top: 27px; */ 
     /* padding-bottom: 27px; */
-    padding-left: auto;
-    padding-right: auto;
+    /* padding-left: auto;
+    padding-right: auto; */
     /* padding: auto 27px;  */
     /* */
-    /* color:var(--bgcolor); */
+    color:var(--bgcolor);
 
     /* overflow: auto; */
     /* transform: translateY(100%);
@@ -335,6 +338,8 @@ ul {
 }
 
 .flex-elements {
+    position: relative;
+    overflow: hidden;
     font-size: 0;
     background: var(--bgcolor);
 }
@@ -344,6 +349,13 @@ ul {
     color: var(--textcolor);
     box-shadow: var(--box-shadow-card);
 }
+
+.flex-elements:hover .overlay, .flex-elements-img-wrapper:hover .overlay, .flex-elements-img-wrapper:hover .overlay,
+.flex-elements-img-wrapper:focus .overlay {
+    transform: translateY(0%);
+    overflow: visible;
+}
+
 
 
 .flex-elements:not(:nth-child(3n)) {
@@ -388,7 +400,8 @@ ul {
     width: 100%;
     height: 100%;
     left: 0px;
-    top: 0px;
+    bottom: 0;
+    /* top: 0px; */
     font-size: 18px;
     /* line-height: 1.2; */
     line-height: 28px;
@@ -405,11 +418,6 @@ ul {
     overflow: hidden;
 }
 
-.flex-elements-img-wrapper:hover .overlay,
-.flex-elements-img-wrapper:focus .overlay {
-    transform: translateY(0%);
-    overflow: visible;
-}
 
 
 
@@ -464,22 +472,25 @@ ul {
     height: 44px;
     margin-right: 10px;
     background-color:var(--bgcolor);
+    /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
     /* fill: red;  */
 }
 /* .teams-item-social-round path {
     fill: var(--social-icon-color);
 } */
 
-
-.teams-social-icon {
-fill: mediumvioletred;
-
+.td-effects:hover .teams-item-social-round, .td-effects:hover .teams-social-icon {
+    transition-duration: 250ms;
 }
-.teams-item-social-round:hover, 
-.teams-item-social-round:hover .teams-social-icon {
+
+ .teams-item-social-round:hover, 
+ .teams-item-social-round:hover .teams-social-icon {
+    transition-duration: 250ms;
+
     background-color:var(--maincolor);
     fill: var(--bgcolor);
 }
+
 
 
 .teams-item-social-round:last-child{
@@ -649,6 +660,11 @@ fill: mediumvioletred;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+}
+.td-effects {
+    /* background-color:red; */
+    transition-duration: 5250ms;
 }
 
 .regular-customers {
@@ -666,24 +682,55 @@ fill: mediumvioletred;
     top: 2490px; */
     border: 1px solid var(--social-icon-color);
     border-radius: 4px;
+    /* transition: transform 5250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    /* transition-duration: 250ms; */
+
 }
+/* .transform-icon {
+    transition-duration: 10000ms;
+} */
+
 
 .regular-customers:hover {
     fill: var(--maincolor); 
     border: 1px solid var(--maincolor);
-}
+    /* transition-duration: 250ms; */
 
-.regular-customers:hover .regular-customers-icon {
-    border: none;
-    fill: var(--maincolor); 
-}
+    /* transition: transform 5250ms cubic-bezier(0.4, 0, 0.2, 1); */
 
+}
 
 .regular-customers-icon {
     fill: var(--social-icon-color);
     max-height: 47px;
     max-width: 94px;
+    /* transition-duration: 250ms; */
+
 }
+
+
+
+.regular-customers:hover .regular-customers-icon {
+    /* border: none; */
+    fill: var(--maincolor); 
+    /* transition-duration: 5250ms; */
+
+    /* transition: transform 5250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    /* background-color: red; */
+}
+/* .transform-icon:hover {
+    transition: transform 5250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+} */
+.td-effects:hover .regular-customers, .td-effects:hover .regular-customers-icon {
+    /* background-color: red; */
+    transition-duration: 250ms;
+
+}
+
+
+
+
 
 /* ============ FOOTER ============= */
 
@@ -750,7 +797,14 @@ fill: mediumvioletred;
 .footer-social-round:hover path {
     background-color:var(--maincolor);
     fill: white; 
+    /* transition-duration: 5250ms; */
+
 }    
+
+.td-effects:hover .footer-social-round {
+    transition-duration: 250ms;
+
+}
 
 
 .footer-social-icon {
