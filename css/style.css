@@ -459,6 +459,7 @@ ul {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    gap: 10px;
     /* padding-left: 32px; */
 }
 
